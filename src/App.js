@@ -6,6 +6,9 @@ import Welcome1 from './welcome/Welcome1';
 import Comment from './comment/Comment';
 import Clock from './clock/Clock';
 import Add1 from './add/Add1';
+import ToggleButton from './event/ToggleButton';
+import List from './list/List';
+import ListBlog from './list/ListBlog'
 
 class App extends Component {
   render() {
@@ -31,6 +34,9 @@ class App extends Component {
         <Comment text='评论内容' date='评论日期' author = {author}></Comment>
         <Clock></Clock>
         <Add1 inc = '1'></Add1>
+        <ToggleButton status = {false} visible='none'></ToggleButton>
+        <List></List>
+        <ListBlog></ListBlog>
       </div>
     );
   }
