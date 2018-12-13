@@ -11,6 +11,8 @@ import List from './list/List';
 import ListBlog from './list/ListBlog'
 import FormSubmit from './form/FormSubmit';
 import Temperature from './stateUp/Temperature';
+import WelcomeDialog from './composition/WelcomeDialog';
+import Product from './example_1/product';
 
 class App extends Component {
   render() {
@@ -41,6 +43,8 @@ class App extends Component {
         <ListBlog></ListBlog>
         <FormSubmit></FormSubmit>
         <Temperature></Temperature>
+        <WelcomeDialog></WelcomeDialog>
+        <Product></Product>
       </div>
     );
   }
