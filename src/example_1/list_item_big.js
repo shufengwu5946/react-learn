@@ -5,14 +5,15 @@ class ItemBig extends React.Component {
 
     render() {
         const items = this.props.items;
+        const product_type = this.props.product_type;
         return (
             <div>
-                <div className='my_width'>{this.props.product_type}</div>
-                <ul>
+                <div className='my_width font_bold'>{product_type}</div>
+                <ul className="padding_0 margin_0">
                 {
                     items.map(
                         (value)=>(
-                            <ItemSmall></ItemSmall>
+                            <ItemSmall content = {value}></ItemSmall>
                         )
                     )
                 }

@@ -4,8 +4,18 @@ import List from './list';
 import './style.css';
 class Product extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.state = {stocked:false}
+        this.handleChecked = this.handleChecked.bind(this);
+    }
+
     componentDidMount() {
 
+    }
+
+    handleCheck(checked){
+        this.setState({stocked:checked});
     }
 
 
@@ -23,7 +33,7 @@ class Product extends React.Component {
 
         return (
             <div className={'my_width'}>
-                <SearchBox></SearchBox>
+                <SearchBox handleCheck = {this.handleChecked}></SearchBox>
                 <List list = {list}></List>
             </div>
         );
