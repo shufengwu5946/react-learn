@@ -6,7 +6,6 @@ class Blog extends React.Component {
             (value)=>(
                 <li key={value.id}>
                     <h1>{value.title}</h1>
-                    <br/>
                     <h3>{value.content}</h3>
                 </li>
             )

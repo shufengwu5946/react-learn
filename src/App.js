@@ -9,6 +9,7 @@ import Add1 from './add/Add1';
 import ToggleButton from './event/ToggleButton';
 import List from './list/List';
 import ListBlog from './list/ListBlog'
+import NumberList from './list/NumberList'
 
 class App extends Component {
   render() {
@@ -37,6 +38,7 @@ class App extends Component {
         <ToggleButton status = {false} visible='none'></ToggleButton>
         <List></List>
         <ListBlog></ListBlog>
+        <NumberList numbers={['one','two','three','four']}></NumberList>
       </div>
     );
   }
