@@ -9,6 +9,7 @@ class ItemSmall extends React.Component {
             <div >
                 <div className={`my_width_half fl ${font_state}`}>{content.name}</div>
                 <div className="my_width_half fl">{content.price}</div>
+                <div className="clear"></div> 
             </div>
         );
     }

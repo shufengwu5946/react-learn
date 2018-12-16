@@ -12,8 +12,8 @@ class ItemBig extends React.Component {
                 <ul className="padding_0 margin_0">
                 {
                     items.map(
-                        (value)=>(
-                            <ItemSmall content = {value}></ItemSmall>
+                        (value,index)=>(
+                            <ItemSmall content = {value} key = {index}></ItemSmall>
                         )
                     )
                 }

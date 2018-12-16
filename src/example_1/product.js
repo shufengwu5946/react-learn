@@ -6,16 +6,23 @@ class Product extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {stocked:false}
+        this.state = {stocked:false,content:""}
         this.handleChecked = this.handleChecked.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
 
     }
 
-    handleCheck(checked){
+    handleChecked(checked){
         this.setState({stocked:checked});
+        
+        
+    }
+
+    handleChange(c){
+        this.setState({content:c});
     }
 
 
@@ -29,24 +36,23 @@ class Product extends React.Component {
             { category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5" },
             { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" }
         ];
-        const list = listHandle(data);
+        const list = listHandle(data,this.state.stocked,this.state.content);
 
         return (
             <div className={'my_width'}>
-                <SearchBox handleCheck = {this.handleChecked}></SearchBox>
+                <SearchBox handle = {this.handleChecked} handleChange = {this.handleChange}></SearchBox>
                 <List list = {list}></List>
             </div>
         );
     }
 }
 
-function listHandle(list) {
+function listHandle(list,inStocked,content) {
     let arr = [];
     const s = new Set();
     list.forEach((value) => {
         s.add(value.category);
     });
-    console.log(s);
     
 
     for (let item of s) {
@@ -56,9 +62,21 @@ function listHandle(list) {
         list.forEach(
             (value) => {
                 if (value.category === item) {
-
                     let { name, price, stocked } = value;
-                    obj.contentList.push({ name, price, stocked });
+                    
+                    if(name.search(content)!==-1){
+                        // console.log("hehe");
+                        
+                        if(inStocked){
+                            if(stocked){
+                                obj.contentList.push({ name, price, stocked });
+                            }
+                        }else{
+                            obj.contentList.push({ name, price, stocked });
+                        }
+                    }
+                    
+                    
                 }
 
             }

@@ -17,7 +17,6 @@ class ToggleButton extends React.Component {
 
     render() {
         const isOpen = this.state.isOpen;
-        console.log(this.props.visible);
         let toggleButton = null;
         if (isOpen) {
             toggleButton = (

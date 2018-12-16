@@ -24,7 +24,7 @@ class Tem extends React.Component{
         return (
             <label>
                 {`${typeLabel}温度：`}
-                <input type="text" onChange = {this.handleChange} value ={this.props.tem}/>
+                <input type="text" onChange = {this.handleChange} value ={String(this.props.tem)}/>
             </label>
         );
     }

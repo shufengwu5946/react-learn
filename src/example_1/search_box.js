@@ -13,17 +13,19 @@ class SearchBox extends React.Component {
     }
 
     handleChecked(event) {
+        this.props.handle(event.target.checked);
+        // console.log(event.target.checked);
         
     }
     handleChange(event) {
-
+        this.props.handleChange(event.target.value);
     }
     render() {
         return (
             <div className=''>
-                <input className='my_width' type="text" onChange={this.handleChange} />
+                <input className='my_width' type="text" onChange={this.handleChange} /> 
                 <div className='my_width'>
-                    <input type="checkbox" name="" id="inStock" onChange={this.handleChecked} checked={this.state.checked}/>
+                    <input type="checkbox" name="" id="inStock" onChange={this.handleChecked}  />
                     Only show Products in stock
                 </div>
             </div>

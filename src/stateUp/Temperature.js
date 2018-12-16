@@ -24,14 +24,7 @@ class Temperature extends React.Component {
 
 
     render() {
-        console.log('渲染');
         const tem = this.state.tem;
-        // console.log(tem);
-        // console.log(Number(tem));
-        // console.log(typeof NaN);
-        
-        
-        
         
         let temC = null;
         let temF = null;
