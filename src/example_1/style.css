@@ -1,0 +1,31 @@
+.my_width{
+    width: 400px;
+}
+
+.my_width_half{
+    width: 50%;
+}
+
+.font_bold{
+    font-weight: bold;
+}
+
+.fl{
+    float: left;
+}
+
+.padding_0{
+    padding: 0px;
+}
+
+.margin_0{
+    margin: 0px;
+}
+
+.stocked{
+    color:black;
+}
+
+.no_stocked{
+    color:red;
+}
