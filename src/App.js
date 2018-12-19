@@ -29,6 +29,7 @@ import CommentList from './hoc/CommentList';
 import BlogPost from './hoc/BlogPost';
 import DataSourceBlogPost from './hoc/DataSourceBlogPost';
 import DataSourceComment from './hoc/DataSourceComment';
+import Recon from './reconciliation/Recon';
 class App extends Component {
 
   constructor(props){
@@ -92,6 +93,7 @@ class App extends Component {
         <Blog id = {1}></Blog>
         <button onClick={this.testCommentClick}>test comment</button>
         <button onClick={this.testBlogClick}>test blog</button>
+        <Recon></Recon>
       </div>
     );
   }
