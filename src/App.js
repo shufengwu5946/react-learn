@@ -30,28 +30,34 @@ import BlogPost from './hoc/BlogPost';
 import DataSourceBlogPost from './hoc/DataSourceBlogPost';
 import DataSourceComment from './hoc/DataSourceComment';
 import Recon from './reconciliation/Recon';
+import Fragments from './fragments/fragments';
+import './portals/example/index.css';
+import Portals from './portals/example/index';
+import ErrorBoundaries from './error-boundaries/error-boundaries';
+import Forward from './forwarding-ref/forwarding-refs';
+
 class App extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.testCommentClick = this.testCommentClick.bind(this);
     this.testBlogClick = this.testBlogClick.bind(this);
   }
 
-  testCommentClick(event){
+  testCommentClick(event) {
     DataSourceComment.setComments();
   }
 
-  testBlogClick(event){
-    DataSourceBlogPost.setBlog(1,"sfwsfwsfw");
+  testBlogClick(event) {
+    DataSourceBlogPost.setBlog(1, "sfwsfwsfw");
     console.log(DataSourceBlogPost.getBlog(1));
-    
+
   }
 
   render() {
     const author = { avatarUrl: 'https://www.baidu.com/img/baidu_jgylogo3.gif', name: 'wushufeng' };
-    const Comm = withSubscription(CommentList,(obj)=>obj.getComments(),DataSourceComment);
-    const Blog = withSubscription(BlogPost,(obj,id)=>obj.getBlog(id),DataSourceBlogPost);
+    const Comm = withSubscription(CommentList, (obj) => obj.getComments(), DataSourceComment);
+    const Blog = withSubscription(BlogPost, (obj, id) => obj.getBlog(id), DataSourceBlogPost);
     return (
       <div className="App">
         <Welcome1 name="sfw"></Welcome1>
@@ -86,14 +92,19 @@ class App extends Component {
         <FileInput></FileInput>
         <CounterButton></CounterButton>
         <CounterButtonPure></CounterButtonPure>
-        <hr/>
+        <hr />
         <WordAdder></WordAdder>
         <TickTock></TickTock>
         <Comm></Comm>
-        <Blog id = {1}></Blog>
+        <Blog id={1}></Blog>
         <button onClick={this.testCommentClick}>test comment</button>
         <button onClick={this.testBlogClick}>test blog</button>
         <Recon></Recon>
+        <Fragments></Fragments>
+        <Portals></Portals>
+        <div id="modal-root"></div>
+        <ErrorBoundaries></ErrorBoundaries>
+        <Forward></Forward>
       </div>
     );
   }
