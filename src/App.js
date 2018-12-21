@@ -35,6 +35,9 @@ import './portals/example/index.css';
 import Portals from './portals/example/index';
 import ErrorBoundaries from './error-boundaries/error-boundaries';
 import Forward from './forwarding-ref/forwarding-refs';
+import ContextTest from './context/ContextTest';
+import ContextTest2 from './context_update_context_from_nested/ContextTest';
+import RenderPropsTest from './render_props/render-props';
 
 class App extends Component {
 
@@ -60,6 +63,7 @@ class App extends Component {
     const Blog = withSubscription(BlogPost, (obj, id) => obj.getBlog(id), DataSourceBlogPost);
     return (
       <div className="App">
+        <RenderPropsTest></RenderPropsTest>
         <Welcome1 name="sfw"></Welcome1>
         <Welcome2 name='wsf'></Welcome2>
         <Comment text='评论内容' date='评论日期' author={author}></Comment>
@@ -105,6 +109,9 @@ class App extends Component {
         <div id="modal-root"></div>
         <ErrorBoundaries></ErrorBoundaries>
         <Forward></Forward>
+        <ContextTest></ContextTest>
+        <ContextTest2></ContextTest2>
+
       </div>
     );
   }
